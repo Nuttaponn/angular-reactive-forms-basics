@@ -26,9 +26,9 @@ export class AppComponent {
   }
 
   public send() {
-    console.log(this.myForm);
+    // console.log("myForm >> ", this.myForm);
     const parent = this.myForm;
     const child = this.myForm.get("child");
-    alert("parent >> " + parent.valid + "\n" + "child >> " + child.valid);
+    console.log("parent >> " + parent.valid + "\n" + "child >> " + child.valid);
   }
 }

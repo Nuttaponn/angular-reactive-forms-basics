@@ -2,11 +2,7 @@
 	<form [formGroup]="myForm" (ngSubmit)="send()">
 		parent >>
 		name >> <input type="text" name="name" formControlName="name" />
-		<div class="panel panel-default" formGroupName="child">
-			child >>
-			ID >> <input type="text" name="id" formControlName="id" />
-			Name >> <input type="text" name="name" formControlName="name" />
-    </div>
-			<button class="btn btn-primary">send</button>
+		<app-child-form-one [form]="myForm"></app-child-form-one>
+		<button class="btn btn-primary">send</button>
 	</form>
 </div>
