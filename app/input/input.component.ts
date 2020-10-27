@@ -9,19 +9,15 @@ import { FormControl, FormGroup } from "@angular/forms";
 export class InputComponent implements OnInit {
   constructor() {}
 
-  // @Input() childData: string;
-  // @Output() childDataChange = new EventEmitter<string>();
-
-  @Input() formChild: FormGroup;
-  // @Output() formChildChange = new EventEmitter<FormControl>();
+  @Input() formChild: any;
+  @Output() onDone = new EventEmitter<any>();
 
   ngOnInit() {
     console.log(this.formChild);
   }
 
-  // formChildChange(value: FormControl) {
-  //   this.formChildChange.emit(value);
-  // }
-
-  onDone() {}
+  onSubmit(value) {
+    console.log(value);
+    this.onDone.emit(value);
+  }
 }

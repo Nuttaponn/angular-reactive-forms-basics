@@ -36,4 +36,11 @@ export class ChildFormOneComponent implements OnInit {
   public isValid(elem: string): string {
     return this.form.get(elem).status;
   }
+
+  onDone(event) {
+    console.log("evnet ", event);
+    let child = this.form.get("child_one");
+    child.get("id").setValue(event.id);
+    child.get("name").setValue(event.name);
+  }
 }
