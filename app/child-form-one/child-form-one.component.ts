@@ -12,6 +12,11 @@ export class ChildFormOneComponent implements OnInit {
   @Input() form: FormGroup;
 
   ngOnInit() {
-    console.log("childForm >>", this.form.get("child"));
+    this.form.get("child_one").statusChanges.subscribe(status => {
+      console.log("child_one current status is >> ", status);
+    });
+    this.form.get("child_one").valueChanges.subscribe(value => {
+      console.log("child_one current value is >> ", value);
+    });
   }
 }

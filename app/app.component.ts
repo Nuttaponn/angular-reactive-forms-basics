@@ -17,8 +17,11 @@ export class AppComponent {
 
   ngOnInit() {
     this.myForm = this.fb.group({
-      name: ["", [Validators.required, Validators.maxLength(500)]],
       child_one: this.fb.group({
+        id: ["", [Validators.required]],
+        name: ["", [Validators.required]]
+      }),
+      child_two: this.fb.group({
         id: ["", [Validators.required]],
         name: ["", [Validators.required]]
       })
@@ -26,11 +29,18 @@ export class AppComponent {
   }
 
   public send() {
-    // console.log("myForm >> ", this.myForm);
     const parent = this.myForm;
     const child_one = this.myForm.get("child_one");
+    const child_two = this.myForm.get("child_two");
     console.log(
-      "parent >> " + parent.valid + "\n" + "child_one >> " + child_one.valid
+      "parent >> " +
+        parent.valid +
+        "\n" +
+        "child_one >> " +
+        child_one.valid +
+        "\n" +
+        "child_two >> " +
+        child_two.valid
     );
   }
 }
