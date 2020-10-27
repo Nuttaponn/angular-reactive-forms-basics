@@ -12,7 +12,6 @@ import {
 })
 export class AppComponent {
   myForm: FormGroup;
-  email: AbstractControl;
 
   constructor(private fb: FormBuilder) {}
 
@@ -30,7 +29,6 @@ export class AppComponent {
     console.log(this.myForm);
     const parent = this.myForm;
     const child = this.myForm.get("child");
-    // console.log(this.myForm)
     alert("parent >> " + parent.valid + "\n" + "child >> " + child.valid);
   }
 }
