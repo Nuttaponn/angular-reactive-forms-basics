@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from "@angular/core";
-import { FormGroup } from "@angular/forms";
+import { FormControl, FormGroup } from "@angular/forms";
 
 @Component({
   selector: "app-child-form-one",
@@ -18,5 +18,13 @@ export class ChildFormOneComponent implements OnInit {
     this.form.get("child_one").valueChanges.subscribe(value => {
       console.log("child_one current value is >> ", value);
     });
+  }
+
+  public isTouched(elem: string): boolean {
+    return this.form.get(elem).touched;
+  }
+
+  public isValid(elem: string): string {
+    return this.form.get(elem).status;
   }
 }

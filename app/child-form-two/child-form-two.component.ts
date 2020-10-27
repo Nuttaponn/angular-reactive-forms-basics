@@ -19,4 +19,12 @@ export class ChildFormTwoComponent implements OnInit {
       console.log("child_two current value is >> ", value);
     });
   }
+
+  public isTouched(elem: string): boolean {
+    return this.form.get(elem).touched;
+  }
+
+  public isValid(elem: string): string {
+    return this.form.get(elem).status;
+  }
 }
