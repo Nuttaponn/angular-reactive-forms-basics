@@ -10,6 +10,7 @@ export class ChildFormOneComponent implements OnInit {
   constructor() {}
 
   @Input() form: FormGroup;
+  isShowInput = false;
 
   ngOnInit() {
     this.form.get("child_one").statusChanges.subscribe(status => {
@@ -18,13 +19,10 @@ export class ChildFormOneComponent implements OnInit {
     this.form.get("child_one").valueChanges.subscribe(value => {
       console.log("child_one current value is >> ", value);
     });
-    // this.setValue();
   }
 
-  setValue() {
-    this.form.get("child_one.id").setValue("01");
-    this.form.get("child_one.name").setValue("01");
-    this.form.get("child_one").updateValueAndValidity();
+  onEdit() {
+    this.isShowInput = !this.isShowInput;
   }
 
   public isTouched(elem: string): boolean {

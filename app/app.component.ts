@@ -19,12 +19,12 @@ export class AppComponent {
   ngOnInit() {
     this.myForm = this.fb.group({
       child_one: this.fb.group({
-        id: ["21", [Validators.required]],
-        name: ["12", [Validators.required]]
+        id: ["", [Validators.required]],
+        name: ["", [Validators.required]]
       }),
       child_two: this.fb.group({
-        id: ["12", [Validators.required]],
-        name: ["12", [Validators.required]]
+        id: ["", [Validators.required]],
+        name: ["", [Validators.required]]
       })
     });
     this.myForm.statusChanges.subscribe(str =>
