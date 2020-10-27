@@ -8,7 +8,8 @@ import {
 
 @Component({
   selector: "my-app",
-  templateUrl: "./app.component.html"
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.css"]
 })
 export class AppComponent {
   myForm: FormGroup;
@@ -26,6 +27,9 @@ export class AppComponent {
         name: ["", [Validators.required]]
       })
     });
+    this.myForm.statusChanges.subscribe(str =>
+      console.log("main >> ", str, this.myForm)
+    );
   }
 
   public send() {
