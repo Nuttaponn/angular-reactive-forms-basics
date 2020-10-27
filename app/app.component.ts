@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { ChangeDetectorRef, Component, OnInit } from "@angular/core";
 import {
   FormGroup,
   AbstractControl,
@@ -14,22 +14,26 @@ import {
 export class AppComponent {
   myForm: FormGroup;
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private cdr: ChangeDetectorRef) {}
 
   ngOnInit() {
     this.myForm = this.fb.group({
       child_one: this.fb.group({
-        id: ["", [Validators.required]],
-        name: ["", [Validators.required]]
+        id: ["21", [Validators.required]],
+        name: ["12", [Validators.required]]
       }),
       child_two: this.fb.group({
-        id: ["", [Validators.required]],
-        name: ["", [Validators.required]]
+        id: ["12", [Validators.required]],
+        name: ["12", [Validators.required]]
       })
     });
     this.myForm.statusChanges.subscribe(str =>
       console.log("main >> ", str, this.myForm)
     );
+  }
+
+  ngAfterViewInit() {
+    this.cdr.detectChanges();
   }
 
   public send() {

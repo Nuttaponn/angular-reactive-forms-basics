@@ -18,10 +18,21 @@ export class ChildFormOneComponent implements OnInit {
     this.form.get("child_one").valueChanges.subscribe(value => {
       console.log("child_one current value is >> ", value);
     });
+    // this.setValue();
+  }
+
+  setValue() {
+    this.form.get("child_one.id").setValue("01");
+    this.form.get("child_one.name").setValue("01");
+    this.form.get("child_one").updateValueAndValidity();
   }
 
   public isTouched(elem: string): boolean {
     return this.form.get(elem).touched;
+  }
+
+  public isDirty(elem: string): boolean {
+    return this.form.get(elem).dirty;
   }
 
   public isValid(elem: string): string {
