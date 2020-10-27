@@ -42,5 +42,13 @@ export class ChildFormOneComponent implements OnInit {
     let child = this.form.get("child_one");
     child.get("id").setValue(event.id);
     child.get("name").setValue(event.name);
+    this.updateTouchedDirty();
+  }
+
+  updateTouchedDirty() {
+    this.form.markAsTouched();
+    this.form.markAsDirty();
+    this.form.get("child_one").markAsTouched();
+    this.form.get("child_one").markAsDirty();
   }
 }
