@@ -8,18 +8,7 @@ import {
 
 @Component({
   selector: "my-app",
-  template: `
-    <div>
-      <form [formGroup]="myForm" (ngSubmit)="send()" novalidate>
-        <input type="text" name="name" formControlName="name" />
-        <div class="panel panel-default" formGroupName="child">
-          <input type="text" name="id" formControlName="id" />
-          <input type="text" name="name" formControlName="name" />
-        </div>
-        <button class="btn btn-primary">send</button>
-      </form>
-    </div>
-  `
+  templateUrl: "./app.component.html"
 })
 export class AppComponent {
   myForm: FormGroup;
