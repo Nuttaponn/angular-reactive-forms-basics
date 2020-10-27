@@ -32,10 +32,6 @@ export class AppComponent {
     );
   }
 
-  ngAfterViewInit() {
-    this.cdr.detectChanges();
-  }
-
   public send() {
     const parent = this.myForm;
     const child_one = this.myForm.get("child_one");

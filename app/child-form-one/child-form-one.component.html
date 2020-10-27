@@ -1,7 +1,7 @@
 <div [formGroup]="form">
 	<div class="panel panel-default" formGroupName="child_one">
-		<label [ngClass]="isValid('child_one') === 'VALID' ? 'valid' : ( isValid('child_one') === 'INVALID' && isTouched('child_one') ? 'invalid' : 'init')">status</label>
-		child_one:
+		<label [ngClass]="isValid('child_one') === 'VALID' ? 'valid' : ( isValid('child_one') === 'INVALID' ? 'invalid' : 'init')">status</label>
+		<p>child_one:</p>
 		<p>ID >> {{ form.get('child_one.id').value }}</p>
 		<!-- <input type="text" name="id" formControlName="id" disabled /> -->
 		<p>Name >> {{ form.get('child_one.name').value }}</p>

@@ -1,6 +1,6 @@
 <div>
 	<form [formGroup]=" myForm" (ngSubmit)="send()">
-		<label [ngClass]="myForm.valid ? 'valid' : ( !myForm.valid && myForm.touched ? 'invalid' : 'init' )">All Status</label>
+		<label [ngClass]="myForm.valid ? 'valid' : ( !myForm.valid ? 'invalid' : 'init' )">All Status</label>
 		<app-child-form-one [form]="myForm"></app-child-form-one>
 		<app-child-form-two [form]="myForm"></app-child-form-two>
 		<button class="btn btn-primary" [disabled]="!myForm.valid">send</button>
