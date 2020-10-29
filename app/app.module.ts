@@ -9,6 +9,7 @@ import { ChildFormOneComponent } from "./child-form-one/child-form-one.component
 import { ChildFormTwoComponent } from "./child-form-two/child-form-two.component";
 import { InputComponent } from "./input/input.component";
 import { GenerateFormService } from "./services/generate-form.service";
+import { ControlMessagesComponent } from "./control-messages/control-messages.component";
 
 @NgModule({
   imports: [BrowserModule, ReactiveFormsModule, HttpModule, FormsModule],
@@ -16,7 +17,8 @@ import { GenerateFormService } from "./services/generate-form.service";
     AppComponent,
     ChildFormOneComponent,
     ChildFormTwoComponent,
-    InputComponent
+    InputComponent,
+    ControlMessagesComponent
   ],
   bootstrap: [AppComponent],
   providers: [GenerateFormService]

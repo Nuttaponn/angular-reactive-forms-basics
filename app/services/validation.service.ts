@@ -1,9 +1,9 @@
 import { Injectable } from "@angular/core";
-import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { FormBuilder } from "@angular/forms";
 
 @Injectable()
-export class GenerateFormService {
-  constructor(private fb: FormBuilder) {}
+export class ValidationService {
+  constructor() {}
 
   static getValidatorErrorMessage(validatorName: string, validatorValue?: any) {
     let config = {

@@ -6,5 +6,6 @@
 	ID >> <input type="text" name="id" formControlName="id"/>
   Name >> <input type="text" name="name" formControlName="name"/>
   Email >> <input type="text" name="email" formControlName="email"/>
+	<app-control-messages [control]="inputChildForm.get('email')"></app-control-messages>
 	<button class="btn btn-primary" (click)="onSubmit(inputChildForm)">Done</button>
 </div>
