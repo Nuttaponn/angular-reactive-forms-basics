@@ -8,5 +8,5 @@
 		<!-- <input type="text" name="name" formControlName="name" disabled /> -->
 	</div>
 	<button class="btn btn-primary" (click)="onEdit()">edit</button>
-	<app-input *ngIf="isShowInput" [formChild]="form.get('child_one').value" (onDone)="onDone($event)"></app-input>
+	<app-input *ngIf="isShowInput" [formChild]="form.get('child_one')" (onDone)="onDone($event)"></app-input>
 </div>

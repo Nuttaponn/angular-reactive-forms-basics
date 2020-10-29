@@ -1,5 +1,9 @@
-<div>
-	ID >> <input type="text" name="id" [(ngModel)]="formChild.id"/>
-  Name >> <input type="text" name="name" [(ngModel)]="formChild.name"/>
-	<button class="btn btn-primary" (click)="onSubmit(formChild)">Done</button>
+<div [formGroup]="inputChildForm">
+
+	Value: {{ inputChildForm.value | json }}
+	Status: {{ inputChildForm.status }}
+
+	ID >> <input type="text" name="id" formControlName="id"/>
+  Name >> <input type="text" name="name" formControlName="name"/>
+	<button class="btn btn-primary" (click)="onSubmit(inputChildForm)">Done</button>
 </div>

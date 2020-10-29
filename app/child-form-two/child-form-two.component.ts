@@ -14,10 +14,10 @@ export class ChildFormTwoComponent implements OnInit {
 
   ngOnInit() {
     this.form.get("child_two").statusChanges.subscribe(status => {
-      console.log("child_two current status is >> ", status);
+      // console.log("child_two current status is >> ", status);
     });
     this.form.get("child_two").valueChanges.subscribe(value => {
-      console.log("child_two current value is >> ", value);
+      // console.log("child_two current value is >> ", value);
     });
   }
 
@@ -37,11 +37,11 @@ export class ChildFormTwoComponent implements OnInit {
     return this.form.get(elem).status;
   }
 
-  onDone(event) {
+  onDone(event: FormGroup) {
     console.log("evnet ", event);
     let child = this.form.get("child_two");
-    child.get("id").setValue(event.id);
-    child.get("name").setValue(event.name);
+    child.get("id").setValue(event.get("id").value);
+    child.get("name").setValue(event.get("name").value);
     this.updateTouchedDirty();
   }
 

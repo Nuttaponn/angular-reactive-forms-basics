@@ -5,6 +5,7 @@ import {
   FormBuilder,
   Validators
 } from "@angular/forms";
+import { GenerateFormService } from "./generate-form.service";
 
 @Component({
   selector: "my-app",
@@ -14,22 +15,19 @@ import {
 export class AppComponent {
   myForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private cdr: ChangeDetectorRef) {}
+  constructor(
+    private fb: FormBuilder,
+    private generateFormService: GenerateFormService
+  ) {}
 
   ngOnInit() {
     this.myForm = this.fb.group({
-      child_one: this.fb.group({
-        id: ["", [Validators.required]],
-        name: ["", [Validators.required]]
-      }),
-      child_two: this.fb.group({
-        id: ["", [Validators.required]],
-        name: ["", [Validators.required]]
-      })
+      child_one: this.generateFormService.inputFormService(),
+      child_two: this.generateFormService.inputFormService()
     });
-    this.myForm.statusChanges.subscribe(str =>
-      console.log("main >> ", str, this.myForm)
-    );
+    // this.myForm.statusChanges.subscribe(str =>
+    //   console.log("main >> ", str, this.myForm)
+    // );
   }
 
   public send() {

@@ -1,5 +1,12 @@
 import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
-import { FormControl, FormGroup } from "@angular/forms";
+import {
+  AbstractControl,
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators
+} from "@angular/forms";
+import { GenerateFormService } from "../generate-form.service";
 
 @Component({
   selector: "app-input",
@@ -7,17 +14,23 @@ import { FormControl, FormGroup } from "@angular/forms";
   styleUrls: ["./input.component.css"]
 })
 export class InputComponent implements OnInit {
-  constructor() {}
+  constructor(
+    private fb: FormBuilder,
+    private generateFormService: GenerateFormService
+  ) {}
 
-  @Input() formChild: any;
-  @Output() onDone = new EventEmitter<any>();
+  @Input() formChild: AbstractControl;
+  @Output() onDone = new EventEmitter<FormGroup>();
+  inputChildForm: FormGroup;
 
   ngOnInit() {
     console.log(this.formChild);
+    this.inputChildForm = this.generateFormService.inputFormService();
+    console.log(this.inputChildForm);
   }
 
   onSubmit(value) {
-    console.log(value);
+    console.log("value >> ", value);
     this.onDone.emit(value);
   }
 }
