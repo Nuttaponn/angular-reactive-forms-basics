@@ -6,7 +6,7 @@ import {
   FormGroup,
   Validators
 } from "@angular/forms";
-import { GenerateFormService } from "../generate-form.service";
+import { GenerateFormService } from "../services/generate-form.service";
 
 @Component({
   selector: "app-input",
