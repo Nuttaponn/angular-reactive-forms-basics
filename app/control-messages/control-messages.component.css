@@ -2,3 +2,8 @@ div {
   color: #e82c0c;
   margin: 6px 0;
 }
+
+p {
+  margin: 0;
+  color: red;
+}
