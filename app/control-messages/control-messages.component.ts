@@ -28,4 +28,12 @@ export class ControlMessagesComponent {
       return null;
     }
   }
+
+  get touched() {
+    return this.control && this.control.touched;
+  }
+
+  get errors() {
+    return this.control ? this.control.errors || {} : {};
+  }
 }

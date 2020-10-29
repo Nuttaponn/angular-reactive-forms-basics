@@ -1,1 +1,14 @@
-<div *ngIf="errorMessage !== null">{{ errorMessage }}</div>
+<!-- <div *ngIf="errorMessage !== null">{{ errorMessage }}</div> -->
+<ng-container *ngIf="touched">
+  <p *ngIf="errors.required">This field is require</p>
+  <p *ngIf="errors.email">email is in-valid</p>
+  <p *ngIf="errors.minlength">
+    This field minimun at least {{ errors.minlength.requiredLength }}
+  </p>
+  <p *ngIf="errors.maxlength">
+    This field is max to {{ errors.maxlength.requiredLength }}
+  </p>
+  <p *ngIf="errors.forbiddenName">
+    This field has forbidden name: {{ errors.forbiddenName.value }}
+  </p>
+</ng-container>
