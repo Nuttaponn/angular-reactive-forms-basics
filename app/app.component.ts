@@ -53,6 +53,7 @@ export class AppComponent {
     });
     this.mainForm = this.appFormService.getMainForm();
     console.log(this.mainForm);
+    //TODO: Set up on child page, No main page
     this.mainForm
       .get("customerInfoTab")
       .setValue(
