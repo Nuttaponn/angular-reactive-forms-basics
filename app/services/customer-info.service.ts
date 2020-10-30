@@ -23,13 +23,13 @@ export class CustomerInfoService {
   getCustomerProfile(customerProfile?: CustomerProfile): FormGroup {
     if (customerProfile) {
       return this.fb.group({
-        identNumber: [customerProfile.identNumber, [Validators.required]],
-        registContry: [customerProfile.registContry, [Validators.required]],
-        registDate: [customerProfile.registDate, [Validators.required]],
-        titleTh: [customerProfile.titleTh, [Validators.required]],
-        nameTh: [customerProfile.nameTh, [Validators.required]],
-        titleEn: [customerProfile.titleEn, [Validators.required]],
-        nameEn: [customerProfile.nameEn, [Validators.required]]
+        identNumber: [customerProfile.identNumber || "", [Validators.required]],
+        registContry: [customerProfile.registContry || "", [Validators.required]],
+        registDate: [customerProfile.registDate || "", [Validators.required]],
+        titleTh: [customerProfile.titleTh || "", [Validators.required]],
+        nameTh: [customerProfile.nameTh || "", [Validators.required]],
+        titleEn: [customerProfile.titleEn || "", [Validators.required]],
+        nameEn: [customerProfile.nameEn || "", [Validators.required]]
       });
     } else {
       return this.fb.group({
@@ -47,9 +47,9 @@ export class CustomerInfoService {
   getAddressInfomation(addressInfomation?: AddressInfomation): FormGroup {
     if (addressInfomation) {
       return this.fb.group({
-        registAddress: [addressInfomation.registAddress, [Validators.required]],
-        officeAddress: [addressInfomation.officeAddress, [Validators.required]],
-        mailingAddress: [addressInfomation.mailingAddress, [Validators.required]]
+        registAddress: [addressInfomation.registAddress || "", [Validators.required]],
+        officeAddress: [addressInfomation.officeAddress || "", [Validators.required]],
+        mailingAddress: [addressInfomation.mailingAddress || "", [Validators.required]]
       });
     } else {
       return this.fb.group({
