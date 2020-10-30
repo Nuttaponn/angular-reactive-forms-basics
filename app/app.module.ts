@@ -11,6 +11,11 @@ import { InputComponent } from "./input/input.component";
 import { GenerateFormService } from "./services/generate-form.service";
 import { ControlMessagesComponent } from "./control-messages/control-messages.component";
 import { ValidationService } from "./services/validation.service";
+import { ApplicationFormService } from './services/application-form.service';
+import { CustomerInfoService } from './services/customer-info.service';
+import { ProductInfoService } from './services/product-info.service';
+import { ServiceInfoService } from './services/service-info.service';
+import { FeeInfoService } from './services/fee-info.service';
 
 @NgModule({
   imports: [BrowserModule, ReactiveFormsModule, HttpModule, FormsModule],
@@ -22,6 +27,6 @@ import { ValidationService } from "./services/validation.service";
     ControlMessagesComponent
   ],
   bootstrap: [AppComponent],
-  providers: [GenerateFormService, ValidationService]
+  providers: [GenerateFormService, ValidationService, ApplicationFormService, CustomerInfoService, ProductInfoService, ServiceInfoService, FeeInfoService]
 })
 export class AppModule {}

@@ -5,6 +5,7 @@ import {
   FormBuilder,
   Validators
 } from "@angular/forms";
+import { ApplicationFormService } from "./services/application-form.service";
 import { GenerateFormService } from "./services/generate-form.service";
 
 @Component({
@@ -14,10 +15,12 @@ import { GenerateFormService } from "./services/generate-form.service";
 })
 export class AppComponent {
   myForm: FormGroup;
+  mainForm: FormGroup;
 
   constructor(
     private fb: FormBuilder,
-    private generateFormService: GenerateFormService
+    private generateFormService: GenerateFormService,
+    private appFormService: ApplicationFormService
   ) {}
 
   ngOnInit() {
@@ -25,9 +28,8 @@ export class AppComponent {
       child_one: this.generateFormService.inputFormService(),
       child_two: this.generateFormService.inputFormService()
     });
-    // this.myForm.statusChanges.subscribe(str =>
-    //   console.log("main >> ", str, this.myForm)
-    // );
+    this.mainForm = this.appFormService.getMainForm();
+    console.log(this.mainForm);
   }
 
   public send() {

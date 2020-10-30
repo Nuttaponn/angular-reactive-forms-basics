@@ -6,3 +6,12 @@
 		<button class="btn btn-primary" [disabled]="!myForm.valid">send</button>
 	</form>
 </div>
+<br>
+<br>
+<br>
+<div>
+	mainForm : Value
+	<form [formGroup]="mainForm">
+	</form>
+	<pre>{{ mainForm.value | json }}</pre>
+</div>

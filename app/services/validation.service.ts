@@ -8,7 +8,7 @@ export class ValidationService {
   forbiddenNameValidator(nameRe: RegExp): ValidatorFn {
     return (control: AbstractControl): { [key: string]: any } | null => {
       const forbidden = nameRe.test(control.value);
-      console.log("forbidden >> ", forbidden);
+      // console.log("forbidden >> ", forbidden);
       return forbidden ? { forbiddenName: { value: control.value } } : null;
     };
   }
