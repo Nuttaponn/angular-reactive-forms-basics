@@ -19,8 +19,7 @@ export class GenerateFormService {
           Validators.email,
           Validators.required,
           Validators.maxLength(100),
-          this.validationService.forbiddenNameValidator(REG_EXP.KTB_EMAIL_1),
-          this.validationService.forbiddenNameValidator(REG_EXP.KTB_EMAIL_2)
+          this.validationService.forbiddenNameValidator(REG_EXP.KTB_EMAIL)
         ]
       ],
       name: ["", [Validators.required]]
