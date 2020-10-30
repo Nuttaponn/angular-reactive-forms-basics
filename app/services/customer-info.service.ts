@@ -6,14 +6,14 @@ import { CustomerInfo, CustomerProfile, AddressInfomation } from "../interface/c
 export class CustomerInfoService {
   constructor(private fb: FormBuilder) { }
 
-  getCustomerInfoTab(): FormGroup {
+  initFormCustomerInfo(): FormGroup {
     return this.fb.group({
       customerProfile: this.getCustomerProfile(),
       addressInfomation: this.getAddressInfomation()
     });
   }
 
-  setCustomerInfoTab(custProfile: CustomerInfo) {
+  setFormCustomerInfo(custProfile: CustomerInfo) {
     return this.fb.group({
       customerProfile: this.getCustomerProfile(custProfile?.customerProfile),
       addressInfomation: this.getAddressInfomation(custProfile?.addressInfomation)

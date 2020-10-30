@@ -17,10 +17,10 @@ export class ApplicationFormService {
 
   getMainForm(): FormGroup {
     return this.fb.group({
-      customerInfoTab: this.custInfoService.getCustomerInfoTab(),
-      productInfoTab: this.productInfoService.getProductInfoTab(),
-      serviceInfoTab: this.serviceInfoService.getServiceInfoTab(),
-      feeInfoTab: this.feeInfoService.getFeeInfoTab()
+      customerInfoTab: this.custInfoService.initFormCustomerInfo(),
+      productInfoTab: this.productInfoService.initFormProductInfoTab(),
+      serviceInfoTab: this.serviceInfoService.initFormServiceInfoTab(),
+      feeInfoTab: this.feeInfoService.initFormFeeInfoTab()
     });
   }
 }

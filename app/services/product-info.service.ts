@@ -5,7 +5,7 @@ import { FormArray, FormBuilder, FormGroup, Validators } from "@angular/forms";
 export class ProductInfoService {
   constructor(private fb: FormBuilder) {}
 
-  getProductInfoTab(): FormGroup {
+  initFormProductInfoTab(): FormGroup {
     return this.fb.group({
       companyId: ["", [Validators.required]],
       productInfomation: this.getProductInfomation(),

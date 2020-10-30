@@ -29,7 +29,7 @@ export class ChildFormOneComponent implements OnInit {
     this.getValue();
 
     this.formTab.setValue(
-      this.custInfoService.setCustomerInfoTab(this.mockCustomer).value
+      this.custInfoService.setFormCustomerInfo(this.mockCustomer).value
     );
   }
 

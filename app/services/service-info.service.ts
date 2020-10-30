@@ -5,7 +5,7 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 export class ServiceInfoService {
   constructor(private fb: FormBuilder) {}
 
-  getServiceInfoTab(): FormGroup {
+  initFormServiceInfoTab(): FormGroup {
     return this.fb.group({});
   }
 }
