@@ -24,6 +24,13 @@ export class ProductInfoService {
     });
   }
 
+  setProductInfomation(custProfile: CustomerInfo) {
+    return this.fb.group({
+      customerProfile: this.getCustomerProfile(custProfile?.customerProfile),
+      addressInfomation: this.getAddressInfomation(custProfile?.addressInfomation)
+    });
+  }
+
   getContactInfomation(): FormArray {
     return this.fb.array([]);
   }

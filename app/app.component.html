@@ -1,7 +1,7 @@
 <div>
 	<form [formGroup]=" myForm" (ngSubmit)="send()">
 		<label [ngClass]="myForm.valid && myForm.touched ? 'valid' : ( !myForm.valid && myForm.touched ? 'invalid' : 'init' )">All Status</label>
-		<app-child-form-one [form]="myForm"></app-child-form-one>
+		<app-child-form-one [form]="myForm" [formTab]="mainForm.get('customerInfoTab')"></app-child-form-one>
 		<app-child-form-two [form]="myForm"></app-child-form-two>
 		<button class="btn btn-primary" [disabled]="!myForm.valid">send</button>
 	</form>

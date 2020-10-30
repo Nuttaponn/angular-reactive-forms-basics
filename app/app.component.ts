@@ -5,11 +5,6 @@ import {
   FormBuilder,
   Validators
 } from "@angular/forms";
-import {
-  CustomerInfo,
-  CustomerProfile,
-  AddressInfomation
-} from "./interface/customer-info.interface";
 import { ApplicationFormService } from "./services/application-form.service";
 import { CustomerInfoService } from "./services/customer-info.service";
 import { GenerateFormService } from "./services/generate-form.service";
@@ -22,28 +17,11 @@ import { GenerateFormService } from "./services/generate-form.service";
 export class AppComponent {
   myForm: FormGroup;
   mainForm: FormGroup;
-  mockCustomer: CustomerInfo = {
-    customerProfile: {
-      identNumber: "string",
-      registContry: "string",
-      registDate: "string",
-      titleTh: "string",
-      nameTh: "string",
-      titleEn: "string",
-      nameEn: "string"
-    },
-    addressInfomation: {
-      registAddress: "string",
-      officeAddress: "string",
-      mailingAddress: "string"
-    }
-  };
 
   constructor(
     private fb: FormBuilder,
     private generateFormService: GenerateFormService,
-    private appFormService: ApplicationFormService,
-    private customerInfoService: CustomerInfoService
+    private appFormService: ApplicationFormService
   ) {}
 
   ngOnInit() {
@@ -53,12 +31,6 @@ export class AppComponent {
     });
     this.mainForm = this.appFormService.getMainForm();
     console.log(this.mainForm);
-    //TODO: Set up on child page, No main page
-    this.mainForm
-      .get("customerInfoTab")
-      .setValue(
-        this.customerInfoService.setCustomerInfoTab(this.mockCustomer).value
-      );
   }
 
   public send() {

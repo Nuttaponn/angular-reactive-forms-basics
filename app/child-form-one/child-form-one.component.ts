@@ -1,5 +1,8 @@
 import { Component, Input, OnInit } from "@angular/core";
-import { FormControl, FormGroup } from "@angular/forms";
+import { FormGroup } from "@angular/forms";
+import { CustomerInfoService } from "../services/customer-info.service";
+
+import { CustomerInfo } from "./interface/customer-info.interface";
 
 @Component({
   selector: "app-child-form-one",
@@ -7,10 +10,13 @@ import { FormControl, FormGroup } from "@angular/forms";
   styleUrls: ["./child-form-one.component.css"]
 })
 export class ChildFormOneComponent implements OnInit {
-  constructor() {}
+  constructor(private custInfoService: CustomerInfoService) {}
 
   @Input() form: FormGroup;
+  @Input() formTab: FormGroup;
   isShowInput = false;
+
+  mockCustomer: CustomerInfo = {};
 
   ngOnInit() {
     this.form.get("child_one").statusChanges.subscribe(status => {
@@ -19,6 +25,32 @@ export class ChildFormOneComponent implements OnInit {
     this.form.get("child_one").valueChanges.subscribe(value => {
       console.log("child_one current value is >> ", value);
     });
+
+    this.getValue();
+
+    this.formTab.setValue(
+      this.custInfoService.setCustomerInfoTab(this.mockCustomer).value
+    );
+  }
+
+  getValue() {
+    //TODO: provide by back-end services
+    this.mockCustomer = {
+      customerProfile: {
+        identNumber: "identNumber",
+        registContry: "registContry",
+        registDate: "registDate",
+        titleTh: "titleTh",
+        nameTh: "nameTh",
+        titleEn: "titleEn",
+        nameEn: "nameEn"
+      },
+      addressInfomation: {
+        registAddress: "registAddress",
+        officeAddress: "officeAddress",
+        mailingAddress: "mailingAddress"
+      }
+    } as CustomerInfo;
   }
 
   onEdit() {
