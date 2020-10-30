@@ -1,12 +1,6 @@
-import { ChangeDetectorRef, Component, OnInit } from "@angular/core";
-import {
-  FormGroup,
-  AbstractControl,
-  FormBuilder,
-  Validators
-} from "@angular/forms";
+import { Component } from "@angular/core";
+import { FormGroup, FormBuilder } from "@angular/forms";
 import { ApplicationFormService } from "./services/application-form.service";
-import { CustomerInfoService } from "./services/customer-info.service";
 import { GenerateFormService } from "./services/generate-form.service";
 
 @Component({
