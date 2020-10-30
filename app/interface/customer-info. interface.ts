@@ -4,13 +4,13 @@ export interface CustomerInfo {
 }
 
 export interface CustomerProfile {
-  ident_number: string;
-  regist_contry: string;
-  regist_date: string;
-  title_th: string;
-  name_th: string;
-  title_en: string;
-  name_en: string;
+  identNumber: string;
+  registContry: string;
+  registDate: string;
+  titleTh: string;
+  nameTh: string;
+  titleEn: string;
+  nameEn: string;
 }
 
 export interface AddressInfomation {
