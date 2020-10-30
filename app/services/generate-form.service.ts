@@ -1,13 +1,13 @@
 import { Injectable } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
-import { ForbiddenNameValidatorService } from "./forbidden-name-validator.service";
 import { REG_EXP } from "../../constants/regExp.constant";
+import { ValidationService } from "./validation.service";
 
 @Injectable()
 export class GenerateFormService {
   constructor(
     private fb: FormBuilder,
-    private fnvService: ForbiddenNameValidatorService
+    private validationService: ValidationService
   ) {}
 
   inputFormService(): FormGroup {
@@ -18,9 +18,9 @@ export class GenerateFormService {
         [
           Validators.email,
           Validators.required,
-          Validators.minLength(5),
-          Validators.maxLength(10),
-          this.fnvService.forbiddenNameValidator(REG_EXP.KTB)
+          Validators.maxLength(100),
+          this.validationService.forbiddenNameValidator(REG_EXP.KTB_EMAIL_1),
+          this.validationService.forbiddenNameValidator(REG_EXP.KTB_EMAIL_2)
         ]
       ],
       name: ["", [Validators.required]]

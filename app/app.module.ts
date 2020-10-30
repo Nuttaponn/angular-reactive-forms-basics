@@ -10,7 +10,7 @@ import { ChildFormTwoComponent } from "./child-form-two/child-form-two.component
 import { InputComponent } from "./input/input.component";
 import { GenerateFormService } from "./services/generate-form.service";
 import { ControlMessagesComponent } from "./control-messages/control-messages.component";
-import { ForbiddenNameValidatorService } from './services/forbidden-name-validator.service';
+import { ValidationService } from "./services/validation.service";
 
 @NgModule({
   imports: [BrowserModule, ReactiveFormsModule, HttpModule, FormsModule],
@@ -22,6 +22,6 @@ import { ForbiddenNameValidatorService } from './services/forbidden-name-validat
     ControlMessagesComponent
   ],
   bootstrap: [AppComponent],
-  providers: [GenerateFormService, ForbiddenNameValidatorService]
+  providers: [GenerateFormService, ValidationService]
 })
 export class AppModule {}
