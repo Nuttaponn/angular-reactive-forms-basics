@@ -23,4 +23,18 @@ export class ApplicationFormService {
       feeInfoTab: this.feeInfoService.initFormFeeInfoTab()
     });
   }
+
+  save() {
+    const target = { a: 1, b: 2, c: 1231, d: 0 };
+    const source = { a: 4, b: 5, d: "sfd" };
+
+    Object.keys(source).forEach(key =>
+      key in target ? (target[key] = source[key]) : null
+    );
+
+    console.log("target", target);
+    // expected output: Object { a: 1, b: 4, c: 5 }
+
+    console.log("source", source);
+  }
 }
